@@ -18,15 +18,13 @@ parameters = aruco.DetectorParameters()
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
 
-count = 1
 while True:
-    count += 1
     ret, frame = cap.read()
     if not ret:
         break
 
-    # Detect the markers in the image
-    corners, ids, rejected = aruco.detectMarkers(frame, aruco_dict, parameters=parameters, cameraMatrix=camera_matrix, distCoeff=dist_coeffs)
+    # Detect the markers in the image (no cameraMatrix or distCoeff arguments here)
+    corners, ids, rejected = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
 
     if ids is not None:
         # Estimate pose of each marker

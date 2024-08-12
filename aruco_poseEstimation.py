@@ -47,7 +47,7 @@ cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)  # Set the frame width
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)  # Set the frame height
 
-marker_size = 26  # in mm
+marker_size = 18  # in mm
 
 def poseEstimation(frame, aruco_dict_type, matrix_coefficients, distortion_coefficients):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -61,7 +61,7 @@ def poseEstimation(frame, aruco_dict_type, matrix_coefficients, distortion_coeff
             rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], marker_size, matrix_coefficients, distortion_coefficients)
 
             # Calculate the distance to the marker
-            distance = np.linalg.norm(tvec)
+            distance = np.linalg.norm(tvec) / 10
             print(f"Marker ID: {ids[i][0]}, Distance: {distance:.2f} cm")
 
             # Draw the detected markers
