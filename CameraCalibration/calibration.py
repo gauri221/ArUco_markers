@@ -22,7 +22,7 @@ save_folder = 'CameraCalibration'
 os.makedirs(save_folder, exist_ok=True)
 
 # Load images
-images_path = r'D:\GMISHRA\7th_Sem\Final_Year_Project\ArUco_codes\CameraCalibration\images\*.png'
+images_path = r'path_of_the_file_where_you_want_to_save_your_photos*.png'
 images = glob.glob(images_path)
 print(f"Found {len(images)} images.")
 
