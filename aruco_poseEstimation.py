@@ -4,10 +4,10 @@ import pickle
 from cv2 import aruco
 
 # Load the calibration parameters from pickle files
-with open('D:/GMISHRA/7th_Sem/Final_Year_Project/ArUco_codes/CameraCalibration/cameraMatrix.pkl', 'rb') as f:
+with open('location_of_this_folder/cameraMatrix.pkl', 'rb') as f:
     camera_matrix = pickle.load(f)
 
-with open('D:/GMISHRA/7th_Sem/Final_Year_Project/ArUco_codes/CameraCalibration/dist.pkl', 'rb') as f:
+with open('location_of_this_folder/dist.pkl', 'rb') as f:
     dist_coeffs = pickle.load(f)
 
 # Dictionary of available ArUco dictionaries
